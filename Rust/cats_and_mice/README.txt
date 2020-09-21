@@ -1,6 +1,4 @@
-Gioco basato sulla falsa riga di shar-o.
-Questo file descrive le dinamiche di gioco e il progetto è quello di un server scritto in rust per la gestione degli
-input provenienti da client.
+Questo file descrive le dinamiche di gioco e il progetto è quello di un bot di discord scritto in rust per la gestione degli input provenienti da client.
 regole:
  - 4 giocatori
  - griglia 10*10
@@ -16,15 +14,15 @@ regole:
      - - - - - - - - - -
      - - - - - - - - - -
      - - - - - - - - - -
-     - - o * o - - - - -     >> "centro di mossa" (X)
-     - - * X * - - - - -     >> lati diretti (*)
-     - - o * o - - - - -     >> lati indiretti (o)
-     - - - - - - - - - -     >> lato irrilevante (-)
+     - - ~ + ~ - - - - -     >> "centro di mossa" (o)
+     - - + o + - - - - -     >> lati diretti (+)
+     - - ~ + ~ - - - - -     >> lati indiretti (~)
+     - - - - - - - - - -     >> casella irrilevante (-)
      - - - - - - - - - -
      - - - - - - - - - -
      - - - - - - - - - -
- a partire dal "centro di mossa" si controllano quali tra le 8 caselle che lo circondano sono libere. Tra le caselle
- libere distinguiamo i lati diretti e quelli indiretti.
+ a partire dal "centro di mossa" si controllano tutte le caselle (tra le 8 caselle che lo circondano) che sono libere.
+ Tra le caselle libere distinguiamo i lati diretti e quelli indiretti.
  I lati diretti (a meno che occupati o in contesa) sono sempre raggiungibili.
  I lati indiretti sono raggiungibili solo se almeno uno dei lati diretti a loro adiacenti è libero un lato si dice in
  contesa se 2 o più giocatori lo possono vedere come possibile mossa. i lati contesi sono da segnalare ai giocatori come
