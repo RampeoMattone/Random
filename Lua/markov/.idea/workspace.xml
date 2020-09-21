@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5683c9d0-329a-4683-99a7-003c78884c6d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="NewLua" />
+      </list>
+    </option>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="u5hi1saa" />
+  </component>
+  <component name="ProjectId" id="1hgIZL3QHH1nZQfewYb3PT8mGy8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5683c9d0-329a-4683-99a7-003c78884c6d" name="Default Changelist" comment="" />
+      <created>1600426363925</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600426363925</updated>
+      <workItem from="1600426365288" duration="42000" />
+      <workItem from="1600426414315" duration="2228000" />
+      <workItem from="1600431846412" duration="2139000" />
+      <workItem from="1600440202967" duration="5354000" />
+      <workItem from="1600447568321" duration="4957000" />
+      <workItem from="1600462466407" duration="583000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="573" y="299" width="824" height="515" key="IDE.errors.dialog" timestamp="1600426394450">
+      <screen x="61" y="27" width="1859" height="1053" />
+    </state>
+    <state x="573" y="299" width="824" height="515" key="IDE.errors.dialog/61.27.1859.1053/1920.0.1280.1024@61.27.1859.1053" timestamp="1600426394450" />
+    <state x="479" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1600426405719">
+      <screen x="61" y="27" width="1859" height="1053" />
+    </state>
+    <state x="479" y="188" width="1022" height="737" key="SettingsEditor/61.27.1859.1053/1920.0.1280.1024@61.27.1859.1053" timestamp="1600426405719" />
+    <state x="561" y="245" width="848" height="624" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600445741567">
+      <screen x="61" y="27" width="1859" height="1053" />
+    </state>
+    <state x="561" y="245" width="848" height="624" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/61.27.1859.1053/1920.0.1280.1024@61.27.1859.1053" timestamp="1600445741567" />
+  </component>
+</project>
