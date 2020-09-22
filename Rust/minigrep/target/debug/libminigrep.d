@@ -1,1 +1,1 @@
-/home/rm/Documenti/Code/minigrep/target/debug/libminigrep.rlib: /home/rm/Documenti/Code/minigrep/src/lib.rs
+/home/rm/Code/Random/Rust/minigrep/target/debug/libminigrep.rlib: /home/rm/Code/Random/Rust/minigrep/src/lib.rs
