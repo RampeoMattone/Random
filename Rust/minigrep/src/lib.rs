@@ -1,7 +1,6 @@
 use std::error::Error;
 use std::fs;
 use std::env;
-use core::unicode::conversions::to_lower;
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.path)?;
@@ -32,21 +31,21 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a st
     let query = query.to_lowercase();
     contents
         .lines()
-        .filter(|line| {line.to_lower().contains(query)})
+        .filter(|line| {line.to_lowercase().contains(&query)})
         .collect()
 }
 
-pub struct Config<'a> {
-    pub query: &'a str,
-    pub path: &'a str,
+pub struct Config {
+    pub query: String,
+    pub path: String,
     pub case_sensitive: bool,
 }
 
-impl<'a> Config<'a> {
+impl Config {
     pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
-        if args.len() < 3 {
-            return Err("not enough arguments");
-        }
+
+        args.next(); // dimenticati del primo valore (nome applicazione)
+
         let query = match args.next() {
             Some(arg) => arg,
             None => return Err("Didn't get a query string"),
@@ -56,7 +55,9 @@ impl<'a> Config<'a> {
             Some(arg) => arg,
             None => return Err("Didn't get a file name"),
         };
+
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
+
         Ok(Config { query, path, case_sensitive })
     }
 }
