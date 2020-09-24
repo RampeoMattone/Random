@@ -1,6 +1,7 @@
 use std::error::Error;
 use std::fs;
 use std::env;
+use core::unicode::conversions::to_lower;
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.path)?;
@@ -19,24 +20,20 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let mut matches: Vec<&'a str> = Vec::new();
-    for line in contents.lines() {
-        if line.contains(query) {
-            matches.push(line);
-        }
-    }
-    matches
+    contents
+        .lines()
+        .filter(|line| {
+            line.contains(query)
+        })
+        .collect()
 }
 
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let query = query.to_lowercase();
-    let mut matches: Vec<&'a str> = Vec::new();
-    for line in contents.lines() {
-        if line.to_lowercase().contains(&query) {
-            matches.push(line);
-        }
-    }
-    matches
+    contents
+        .lines()
+        .filter(|line| {line.to_lower().contains(query)})
+        .collect()
 }
 
 pub struct Config<'a> {
@@ -46,12 +43,19 @@ pub struct Config<'a> {
 }
 
 impl<'a> Config<'a> {
-    pub fn new(args: &[String]) -> Result<Config, &'static str> {
+    pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
         if args.len() < 3 {
             return Err("not enough arguments");
         }
-        let query = &args[1];
-        let path = &args[2];
+        let query = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string"),
+        };
+
+        let path = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file name"),
+        };
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
         Ok(Config { query, path, case_sensitive })
     }
